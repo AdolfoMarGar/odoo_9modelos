@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+    <data>
+        <record model="ir.module.category" id="odoo_9modelos.module_category_odoo_9modelos">
+            <field name="name">Centro comercial</field>
+            <field name="description">Ayuda a gestionar tu CC</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record model="res.groups" id="group_cc_empleado">
+            <field name="name">Empleado</field>
+            <field name="category_id" ref="odoo_9modelos.module_category_odoo_9modelos"/>
+            <field name="comment">Empleado que trabaje en los CC</field>
+        </record>
+
+        <record model="res.groups" id="group_cc_gerente">
+            <field name="name">Gerente</field>
+            <field name="category_id" ref="odoo_9modelos.module_category_odoo_9modelos"/>
+            <field name="comment">Gerente del CC</field>
+            <field name="implied_ids" eval="[(4, ref('group_cc_empleado'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4,ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

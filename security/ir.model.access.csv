@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odoo_9modelos_soc_empleado,odoo_9modelos.soc.empleado,model_odoo_9modelos_soc,odoo_9modelos.group_cc_empleado,1,0,0,0
+access_odoo_9modelos_emp_t_empleado,odoo_9modelos.emp_t.empleado,model_odoo_9modelos_emp_t,odoo_9modelos.group_cc_empleado,1,1,1,1
+access_odoo_9modelos_emp_o_empleado,odoo_9modelos.emp_o.empleado,model_odoo_9modelos_emp_o,odoo_9modelos.group_cc_empleado,1,1,1,1
+access_odoo_9modelos_emp_c_gerente,odoo_9modelos.emp_c.gerente,model_odoo_9modelos_emp_c,odoo_9modelos.group_cc_gerente,1,1,1,1

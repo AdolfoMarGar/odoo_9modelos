@@ -1,0 +1,415 @@
+<odoo>
+  <data>
+    <!-- vistas -->
+    <!-- cc -->
+    <record model="ir.ui.view" id="odoo_9modelos.cc_list_view">
+      <field name="name">odoo_9modelos.cc.view.tree</field>
+      <field name="model">odoo_9modelos.cc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.cc_form_view">
+    <field name="name">odoo_9modelos.cc.view.form</field>
+    <field name="model">odoo_9modelos.cc</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de Centro comercial">
+        <sheet>
+          <div class ="oe_title">
+            <h1>
+              <field name ="name" placeholder ="Direccion:"/>
+            </h1>
+          </div>
+          <group>
+            <group>
+            <field name="tiendas_ids"/>
+            <field name="oficinas_ids"/>
+            <field name="emp_cenc_ids"/>
+            <field name="socios_ids"/>
+            </group>
+          </group>
+          
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!-- Emp_cc -->
+    <record model="ir.ui.view" id="odoo_9modelos.emp_c_list_view">
+      <field name="name">odoo_9modelos.emp_c.view.tree</field>
+      <field name="model">odoo_9modelos.emp_c</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="nom"/>
+          <field name="ape"/>
+          <field name="fecha"/>
+          <field name="anios"/>
+          <field name="tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.emp_c_form_view">
+    <field name="name">odoo_9modelos.emp_c.view.form</field>
+    <field name="model">odoo_9modelos.emp_c</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de empleado de C.C.">
+        <sheet>
+        <separator string = "Informacion del empleado"/>
+          <group>
+            <group>
+              <field name="dni"/>
+              <field name="nom"/>
+              <field name="ape"/>
+            </group>
+          </group>
+          <group>
+            <field name="fecha"/>
+            <field name="anios"/>
+            <field name="tipo"/>
+            <field name="cc_id"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!-- tiendas -->
+    <record model="ir.ui.view" id="odoo_9modelos.tie_list_view">
+      <field name="name">odoo_9modelos.tie.view.tree</field>
+      <field name="model">odoo_9modelos.tie</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.tie_form_view">
+    <field name="name">odoo_9modelos.tie.view.form</field>
+    <field name="model">odoo_9modelos.tie</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de tienda">
+        <sheet>
+          <div class ="oe_title">
+            <h1>
+              <field name ="name" placeholder ="Nombre:"/>
+            </h1>
+          </div>
+          <group>
+            <group>
+              <field name ="tipo" placeholder ="Tipo:"/>
+
+              <separator string="Otros"/>
+            <field name="emp_tie_ids"/>
+            <field name="productos_ids"/>
+            </group>
+          </group>
+          
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!--emp_t-->
+    <record model="ir.ui.view" id="odoo_9modelos.emp_t_list_view">
+      <field name="name">odoo_9modelos.emp_t.view.tree</field>
+      <field name="model">odoo_9modelos.emp_t</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="nom"/>
+          <field name="ape"/>
+          <field name="fecha"/>
+          <field name="anios"/>
+          <field name="tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.emp_t_form_view">
+    <field name="name">odoo_9modelos.emp_t.view.form</field>
+    <field name="model">odoo_9modelos.emp_t</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de empleado de tienda">
+        <sheet>
+        <separator string = "Informacion del empleado"/>
+          <group>
+            <group>
+              <field name="dni"/>
+              <field name="nom"/>
+              <field name="ape"/>
+            </group>
+          </group>
+          <group>
+            <field name="fecha"/>
+            <field name="anios"/>
+            <field name="tipo"/>
+            <field name="tie_id"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!--producto-->
+    <record model="ir.ui.view" id="odoo_9modelos.prod_list_view">
+      <field name="name">odoo_9modelos.prod.view.tree</field>
+      <field name="model">odoo_9modelos.prod</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="coste"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.prod_form_view">
+    <field name="name">odoo_9modelos.prod.view.form</field>
+    <field name="model">odoo_9modelos.prod</field>
+    <field name="arch" type="xml">
+        <form string="Formulario del producto">
+          <sheet>
+          <separator string = "Informacion del producto"/>
+            <group>
+              <group>
+                <field name="nom"/>
+                <field name="coste"/>
+              </group>
+            </group>
+            <group>
+              <field name="proveedores_ids"/>
+            </group>         
+          </sheet>
+        </form>
+    </field>
+    </record>
+
+    <!--proveedores-->
+    <record model="ir.ui.view" id="odoo_9modelos.prov_list_view">
+      <field name="name">odoo_9modelos.prov.view.tree</field>
+      <field name="model">odoo_9modelos.prov</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="nom"/>
+          <field name="ape"/>
+          <field name="coste"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.prov_form_view">
+    <field name="name">odoo_9modelos.prov.view.form</field>
+    <field name="model">odoo_9modelos.prov</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de proveedores">
+        <sheet>
+        <separator string = "Informacion del proveedor"/>
+          <group>
+            <group>
+              <field name="dni"/>
+              <field name="nom"/>
+              <field name="ape"/>
+            </group>
+          </group>
+          <group>
+            <field name="coste"/>
+          </group>
+          
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!--Oficinas-->
+    <record model="ir.ui.view" id="odoo_9modelos.ofi_list_view">
+      <field name="name">odoo_9modelos.ofi.view.tree</field>
+      <field name="model">odoo_9modelos.ofi</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.ofi_form_view">
+    <field name="name">odoo_9modelos.ofi.view.form</field>
+    <field name="model">odoo_9modelos.ofi</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de oficina">
+        <sheet>
+          <div class ="oe_title">
+            <h1>
+              <field name ="name" placeholder ="Nombre:"/>
+            </h1>
+          </div>
+          <group>
+            <group>
+              <separator string="Otros"/>
+            <field name="cc_id"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!--emp_o-->
+    <record model="ir.ui.view" id="odoo_9modelos.emp_o_list_view">
+      <field name="name">odoo_9modelos.emp_o.view.tree</field>
+      <field name="model">odoo_9modelos.emp_o</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="nom"/>
+          <field name="ape"/>
+          <field name="fecha"/>
+          <field name="anios"/>
+          <field name="tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.emp_o_form_view">
+    <field name="name">odoo_9modelos.emp_o.view.form</field>
+    <field name="model">odoo_9modelos.emp_o</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de empleado de oficina">
+        <sheet>
+        <separator string = "Informacion del empleado"/>
+          <group>
+            <group>
+              <field name="dni"/>
+              <field name="nom"/>
+              <field name="ape"/>
+            </group>
+          </group>
+          <group>
+            <field name="fecha"/>
+            <field name="anios"/>
+            <field name="tipo"/>
+            <field name="ofi_id"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!--Socios-->
+<record model="ir.ui.view" id="odoo_9modelos.soc_list_view">
+      <field name="name">odoo_9modelos.soc.view.tree</field>
+      <field name="model">odoo_9modelos.soc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="nom"/>
+          <field name="ape"/>
+          <field name="fecha"/>
+          <field name="anios"/>
+          <field name="descuento"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="odoo_9modelos.soc_form_view">
+    <field name="name">odoo_9modelos.soc.view.form</field>
+    <field name="model">odoo_9modelos.soc</field>
+    <field name="arch" type="xml">
+      <form string="Formulario de socios">
+        <sheet>
+        <separator string = "Informacion del socio"/>
+          <group>
+            <group>
+              <field name="dni"/>
+              <field name="nom"/>
+              <field name="ape"/>
+              <field name="anios"/>
+            </group>
+          </group>
+          <group>
+            <field name="fecha"/>
+            <field name="descuento"/>
+            <field name="cc_id"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+    </record>
+
+    <!--Menu action-->
+    <record model="ir.actions.act_window" id="odoo_9modelos.cc_action_window">
+      <field name="name">Centros cormerciales</field>
+      <field name="res_model">odoo_9modelos.cc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.emp_c_action_window">
+      <field name="name">Empleados C.C.</field>
+      <field name="res_model">odoo_9modelos.emp_c</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.tie_action_window">
+      <field name="name">Tiendas</field>
+      <field name="res_model">odoo_9modelos.tie</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.emp_t_action_window">
+      <field name="name">Empleados T.</field>
+      <field name="res_model">odoo_9modelos.emp_t</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.prod_action_window">
+      <field name="name">Productos</field>
+      <field name="res_model">odoo_9modelos.prod</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.prov_action_window">
+      <field name="name">Proveedores</field>
+      <field name="res_model">odoo_9modelos.prov</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.ofi_action_window">
+      <field name="name">Oficinas</field>
+      <field name="res_model">odoo_9modelos.ofi</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.emp_o_action_window">
+      <field name="name">Empleados O.</field>
+      <field name="res_model">odoo_9modelos.emp_o</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="odoo_9modelos.soc_action_window">
+      <field name="name">Socios</field>
+      <field name="res_model">odoo_9modelos.soc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menus -->
+
+    <menuitem name="Centros comerciales" id="odoo_9modelos.menu_root"/>
+
+    <menuitem name="Centros comerciales" id="odoo_9modelos.cc_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.cc_action_window'/>
+    <menuitem name="Empleados C.C" id="odoo_9modelos.emp_c_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.emp_c_action_window'/>
+    <menuitem name="Tiendas" id="odoo_9modelos.tie_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.tie_action_window'/>
+    <menuitem name="Empleados T." id="odoo_9modelos.emp_t_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.emp_t_action_window'/>
+    <menuitem name="Productos" id="odoo_9modelos.prod_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.prod_action_window'/>
+    <menuitem name="Proveedores" id="odoo_9modelos.prov_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.prov_action_window'/>
+    <menuitem name="Oficinas" id="odoo_9modelos.ofi_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.ofi_action_window'/>
+    <menuitem name="Empleados O." id="odoo_9modelos.emp_o_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.emp_o_action_window'/>
+    <menuitem name="Socios" id="odoo_9modelos.soc_menu" parent = 'odoo_9modelos.menu_root' action = 'odoo_9modelos.soc_action_window'/>
+
+  </data>
+</odoo>

@@ -1,0 +1,190 @@
+<odoo>
+    <data>
+      <!--CC-->
+      <record id="cc1" model="odoo_9modelos.cc">
+        <field name="name">Plaza Einstein</field>
+      </record>
+      <record id="cc2" model="odoo_9modelos.cc">
+        <field name="name">C/ Ancha de capuchinos</field>
+      </record>
+      <record id="cc3" model="odoo_9modelos.cc">
+        <field name="name">Av. Mediterraneo</field>
+      </record>
+      <record id="cc4" model="odoo_9modelos.cc">
+        <field name="name">C/Granada</field>
+      </record>
+
+      <!--EMP_CC-->
+      <record id="empc1" model="odoo_9modelos.emp_c">
+        <field name="dni">9568514A</field>
+        <field name="nom">Juan</field>
+        <field name="ape">Martin</field>
+        <field name="fecha">2021-11-07</field>
+        <field name="anios">28</field>
+        <field name="tipo">s</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="empc2" model="odoo_9modelos.emp_c">
+        <field name="dni">77441154A</field>
+        <field name="nom">Pepe</field>
+        <field name="ape">Hernandez</field>
+        <field name="fecha">2020-07-07</field>
+        <field name="anios">22</field>
+        <field name="tipo">l</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="empc3" model="odoo_9modelos.emp_c">
+        <field name="dni">95484512E</field>
+        <field name="nom">Roberto</field>
+        <field name="ape">Hernan</field>
+        <field name="fecha">2019-01-10</field>
+        <field name="anios">39</field>
+        <field name="tipo">g</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      
+      <!--TIENDA-->
+      <record id="t1" model="odoo_9modelos.tie">
+        <field name="name">Zara</field>
+        <field name="tipo">Ropa</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="t2" model="odoo_9modelos.tie">
+        <field name="name">Toy's shop</field>
+        <field name="tipo">Juguetes</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="t3" model="odoo_9modelos.tie">
+        <field name="name">Carrefour</field>
+        <field name="tipo">Supermercado</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="t4" model="odoo_9modelos.tie">
+        <field name="name">Game</field>
+        <field name="tipo">Videojuegos</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+
+      <!--EMP_TIENDA-->
+      <record id="emp_t1" model="odoo_9modelos.emp_t">
+        <field name="dni">44557788R</field>
+        <field name="nom">Adolfo</field>
+        <field name="ape">Caracoche</field>
+        <field name="fecha">2019-01-10</field>
+        <field name="anios">39</field>
+        <field name="tipo">g</field>
+        <field name="tie_id" ref="t1"></field>
+
+      </record>
+      <record id="emp_t2" model="odoo_9modelos.emp_t">
+        <field name="dni">66554422A</field>
+        <field name="nom">Rober</field>
+        <field name="ape">Lino</field>
+        <field name="fecha">2021-10-12</field>
+        <field name="anios">21</field>
+        <field name="tipo">d</field>
+        <field name="tie_id" ref="t1"></field>
+      </record>
+      <record id="emp_t3" model="odoo_9modelos.emp_t">
+        <field name="dni">75485748Z</field>
+        <field name="nom">Juana</field>
+        <field name="ape">Linares</field>
+        <field name="fecha">2022-02-01</field>
+        <field name="anios">19</field>
+        <field name="tipo">d</field>
+        <field name="tie_id" ref="t1"></field>
+      </record>
+
+      <!--Producto-->
+      <record id="p1" model="odoo_9modelos.prod">
+        <field name="nom">Falda rosa</field>
+        <field name="coste">15.9</field>
+        <field name="tie_id" ref="t1"></field>
+      </record>
+      <record id="p2" model="odoo_9modelos.prod">
+        <field name="nom">Pantalon vaquero</field>
+        <field name="coste">20.5</field>
+        <field name="tie_id" ref="t1"></field>
+      </record>
+      <record id="p3" model="odoo_9modelos.prod">
+        <field name="nom">Chaqueta rosa</field>
+        <field name="coste">30</field>
+        <field name="tie_id" ref="t1"></field>
+      </record>
+
+      <!--Proveedor-->
+      <record id="prov1" model="odoo_9modelos.prov">
+        <field name="dni">77554499A</field>
+        <field name="nom">Adrian</field>
+        <field name="ape">Termini</field>
+        <field name="coste">10</field>
+        <field name="prod_id" ref="p1"></field>
+      </record>
+      <record id="prov2" model="odoo_9modelos.prov">
+        <field name="dni">95784578V</field>
+        <field name="nom">Juan</field>
+        <field name="ape">De la Peña</field>
+        <field name="coste">15</field>
+        <field name="prod_id" ref="p2"></field>
+      </record>
+
+      <record id="prov3" model="odoo_9modelos.prov">
+        <field name="dni">66845784C</field>
+        <field name="nom">Soledad</field>
+        <field name="ape">Sola</field>
+        <field name="coste">22</field>
+        <field name="prod_id" ref="p3"></field>
+      </record>
+
+      <!--Oficina-->
+      <record id="ofi1" model="odoo_9modelos.ofi">
+        <field name="name">Carrefour Oficinas</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="ofi2" model="odoo_9modelos.ofi">
+        <field name="name">Reale Seguros</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+
+      <!--EMP_OFI-->
+      <record id="emp_o1" model="odoo_9modelos.emp_o">
+        <field name="dni">66845784C</field>
+        <field name="nom">Soledad</field>
+        <field name="ape">Sola</field>
+        <field name="fecha">2022-02-01</field>
+        <field name="anios">25</field>
+        <field name="tipo">g</field>
+        <field name="ofi_id" ref="ofi1"></field>
+      </record>
+      <record id="emp_o2" model="odoo_9modelos.emp_o">
+        <field name="dni">75487512F</field>
+        <field name="nom">Rodrigo</field>
+        <field name="ape">Higo</field>
+        <field name="fecha">2021-12-12</field>
+        <field name="anios">35</field>
+        <field name="tipo">m</field>
+        <field name="ofi_id" ref="ofi1"></field>
+      </record>
+
+      <!--SOCIO-->
+      <record id="soc1" model="odoo_9modelos.soc">
+        <field name="dni">75487512F</field>
+        <field name="nom">Rodrigo</field>
+        <field name="ape">Higo</field>
+        <field name="fecha">2021-12-12</field>
+        <field name="anios">35</field>
+        <field name="descuento">10</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+      <record id="soc2" model="odoo_9modelos.soc">
+        <field name="dni">51248564H</field>
+        <field name="nom">Adolfo</field>
+        <field name="ape">Martinez</field>
+        <field name="fecha">2019-10-02</field>
+        <field name="anios">35</field>
+        <field name="descuento">20</field>
+        <field name="cc_id" ref="cc1"></field>
+      </record>
+
+    </data>
+</odoo>
